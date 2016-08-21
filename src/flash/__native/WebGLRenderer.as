@@ -64,6 +64,7 @@ package flash.__native
 			{
 				var igd:IGraphicsData = g.graphicsData[i];
 				igd.gldraw(glctx, colorTransform);
+				if ((igd as Object).fill && (igd as Object).fill.matrix && (igd as Object).fill.matrix.a!=1.0) glctx.setTransform2(m);
 			}
 			if (g.lastFill)
 			{
